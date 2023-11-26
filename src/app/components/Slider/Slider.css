@@ -1,0 +1,18 @@
+
+.slide {
+    display:none;
+    opacity:0; 
+    transition: opacity 4s 1s;
+   
+}
+
+.active-anim {
+   display:block; 
+   opacity:1;
+  
+}
+
+.dot-active {
+    background: white;
+    border: 1px solid black;
+}

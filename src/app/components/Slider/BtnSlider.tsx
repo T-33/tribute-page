@@ -3,8 +3,14 @@ import React from "react";
 import leftArrow from "../../../../public/left-arrow.svg";
 import rightArrow from "../../../../public/right-arrow.svg";
 import Image from 'next/image'
+import {createContext, useContext} from "react";
 
-export default function BtnSlider({ direction, moveSlide }) {
+interface Movement {
+  direction: string,
+  moveSlide: VoidFunction
+}
+
+export default function BtnSlider({ direction, moveSlide }: Movement) {
   console.log(direction, moveSlide);
   return (
 

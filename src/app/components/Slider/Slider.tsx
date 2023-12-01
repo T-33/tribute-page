@@ -9,7 +9,11 @@ export default function Slider() {
 
     const [slideIndex, setSlideIndex] = useState(1),
 
-          nextSlide = () => {
+          moveDot = ( index: number ) => setSlideIndex( index ),
+
+          BtnSliderMovement = createContext('movement');
+
+    const nextSlide = () => {
 
             if( slideIndex !== dataSlider.length ){
 
@@ -21,9 +25,9 @@ export default function Slider() {
 
             }
 
-        },
+        };
 
-          prevSlide = () => {
+    const prevSlide = () => {
 
             if( slideIndex !== 1 ){
 
@@ -33,32 +37,23 @@ export default function Slider() {
 
                 setSlideIndex( dataSlider.length )
             }
-        },
+        };
 
-           moveDot = ( index: number ) => setSlideIndex( index ),
-
-           BtnSliderMovement = createContext('movement');
  
    return (
         <div className='flex flex-col w-[50%] h-[50%] mx-auto my-auto'>
 
             
 
-                <div className="container-slider flex justify-center flex-grow-1  object-cover border-black">
-
-
-                    {/* <BtnSliderMovement.Provider value = {`${[prevSlide, 'prev']}`}> */}
-
+                <div className="container-slider flex justify-center flex-grow-1  object-cover border-black overflow-hidden">
+                        
                         <BtnSlider moveSlide = {prevSlide} direction = 'prev' />
-{/* 
-                    </BtnSliderMovement.Provider> */}
-
 
                     {dataSlider.map((obj, index) => {
 
                         return (
 
-                                <div className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+                                <div className={` animate-bounce relative ${ slideIndex === index + 1 ? "slide active-anim" : "slide" }`}
                                      key = {obj.id}
                                      >
 

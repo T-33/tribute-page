@@ -9,9 +9,9 @@ export default function Home() {
   return (
 
     <main className='flex flex-col h-full '>
-      <Header></Header>
-      <Body></Body>
-      <Footer></Footer>
+      <Header/>
+      <Body/>
+      <Footer/>
     </main>
 
   )

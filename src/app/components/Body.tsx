@@ -1,14 +1,13 @@
 import Slider from './Slider/Slider'
 
-const Body = () => {
+export default function Body() {
 
     return (
 
         <div className="flex-1 basis-auto">
-            <Slider></Slider>
+            <Slider/>
         </div>
     );
 
 };
 
-export default Body;

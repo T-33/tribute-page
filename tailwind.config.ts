@@ -8,6 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+
+      animation:{
+        'fade-in': 'fade-in 0.5s ease-in-out ',
+      },
+
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0.4' },
+          '25%': { opacity: '0.5' },
+          '50%': { opacity: '0.65' },
+          '75%': { opacity: '0.85' },
+          '100%': { opacity: '1' },
+        },
+
+        'fade-in-right': {
+          '0%': { opacity: '0.4' },
+          '25%': { opacity: '0.5' },
+          '50%': { opacity: '0.65' },
+          '75%': { opacity: '0.85' },
+          '100%': { opacity: '1' },
+        }
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

@@ -3,15 +3,14 @@ import './Slider.css'
 import dataSlider from './dataSlider'
 import Image from 'next/image'
 import BtnSlider from './BtnSlider'
-import {createContext, useContext} from "react";
+
 
 export default function Slider() {
 
     const [slideIndex, setSlideIndex] = useState(1),
 
-          moveDot = ( index: number ) => setSlideIndex( index ),
+          moveDot = ( index: number ) => setSlideIndex( index );
 
-          BtnSliderMovement = createContext('movement');
 
     const nextSlide = () => {
 
@@ -41,41 +40,50 @@ export default function Slider() {
 
  
    return (
-        <div className='flex flex-col w-[50%] h-[50%] mx-auto my-auto'>
+        <div className='flex flex-col max-w[50%] w-[40vw] max-h-15 max-w-25'>
 
             
-
-                <div className="container-slider flex justify-center flex-grow-1  object-cover border-black overflow-hidden">
-                        
-                        <BtnSlider moveSlide = {prevSlide} direction = 'prev' />
-
-                    {dataSlider.map((obj, index) => {
-
-                        return (
-
-                                <div className={` animate-bounce relative ${ slideIndex === index + 1 ? "slide active-anim" : "slide" }`}
-                                     key = {obj.id}
-                                     >
-
-                                    <Image
-                                        src = {obj.src}
-                                        alt = {`Image${index + 1}`}
-                                        width = '200'
-                                        height = '200'
-                                        className='h-full w-full aspect-square'
-                                    />
-
-                                </div>
-
-                               )
-
-                    })}
-                
-                
-                    <BtnSlider moveSlide={nextSlide} direction={"next"} />
-                
-                </div>
-
+<div className='flex w-full justify-center'>
+    <BtnSlider moveSlide = {prevSlide} direction = 'prev' />
+                    <div className="container-slider relative  border-black  w-full max-w-[800px] h-80 ">    
+    
+    
+    
+    
+                                {dataSlider.map((obj, index) => {
+                                    return (
+                                            <div className = {`
+                                                                slide
+                                                                translate-x-[${index*100}%]
+                                                                absolute 
+                                                                z-0 
+                                                                opacity-0
+                                                                ${ slideIndex === index + 1 ? " z-20 animate-fade-in opacity-100" : `slide`  }
+                                                                max-w-[800px] w-full h-80
+                                                                left-0
+                                                                `}
+                                                 key = {obj.id}
+                                                 >
+    
+                                                <Image
+                                                    src = {obj.src}
+                                                    alt = {`Image${index + 1}`}
+                                                    width = '400'
+                                                    height = '200'
+                                                    className='h-full w-full aspect-square object-cover max-w-full min-w-full '
+                                                />
+    
+                                            </div>
+                                           )
+                                })}
+    
+    
+    
+    
+    
+                    </div>
+    <BtnSlider moveSlide={nextSlide} direction={"next"} />
+</div>
 
 
 

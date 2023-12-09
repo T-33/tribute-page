@@ -4,7 +4,7 @@ export default function Body() {
 
     return (
 
-        <div className="flex-1 basis-auto">
+        <div className="flex flex-1 flex-col justify-center items-center basis-auto ">
             <Slider/>
         </div>
     );

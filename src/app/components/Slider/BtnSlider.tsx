@@ -1,9 +1,8 @@
 import React from "react";
-// import "./Slider.css";
+import Image from 'next/image'
+
 import leftArrow from "../../../../public/left-arrow.svg";
 import rightArrow from "../../../../public/right-arrow.svg";
-import Image from 'next/image'
-import {createContext, useContext} from "react";
 
 interface Movement {
   direction: string,

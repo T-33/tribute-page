@@ -1,4 +1,6 @@
 import Slider from './Slider/Slider'
+import SliderDaisyUI from './SliderDaisyUI';
+import SliderVerticalDaisyUI from './SliderVerticalDaisyUI';
 
 export default function Body() {
 
@@ -6,6 +8,8 @@ export default function Body() {
 
         <div className="flex flex-1 flex-col justify-center items-center basis-auto ">
             <Slider/>
+            <SliderDaisyUI/>
+            <SliderVerticalDaisyUI/>
         </div>
     );
 

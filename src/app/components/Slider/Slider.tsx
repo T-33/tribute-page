@@ -55,7 +55,9 @@ export default function Slider() {
                                                                 absolute 
                                                                 z-0 
                                                                 opacity-0
-                                                                ${ slideIndex === index + 1 ? " z-20 animate-fade-in opacity-100" : `slide`  }
+                                                                transition-opacity
+                                                                duration-500
+                                                                ${ slideIndex === index + 1 ? " z-20 opacity-100" : `slide`  }
                                                                 max-w-[800px] w-full h-80
                                                                 `}
                                                  key = { obj.id }
